@@ -1,3 +1,9 @@
+# Portfolio Website
+
+A modern portfolio website built with Vite and TypeScript.
+
+Last updated: 2024-03-31 22:30
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
