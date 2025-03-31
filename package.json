@@ -10,11 +10,11 @@
     "vercel-build": "npm install && npm run build"
   },
   "dependencies": {
+    "vite": "^5.1.4",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "vite": "^5.1.4"
+    "@types/node": "^20.11.24"
   },
   "description": "Portfolio website showcasing web development and design projects",
   "author": "Ayush Mishra",
