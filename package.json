@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-build": "npm install && npm run build"
+  },
+  "dependencies": {
+    "vite": "^5.1.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "typescript": "^5.2.2"
   },
   "description": "Portfolio website showcasing web development and design projects",
   "author": "Ayush Mishra",
