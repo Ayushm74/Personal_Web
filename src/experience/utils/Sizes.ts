@@ -8,8 +8,9 @@ interface Viewport {
 export default class Sizes extends EventEmitter {
     viewport: Viewport
     sizeViewport: HTMLDivElement
-    width?: number
-    height?: number
+    width: number
+    height: number
+    pixelRatio: number
 
     constructor() {
         super()
@@ -28,6 +29,10 @@ export default class Sizes extends EventEmitter {
         this.resize = this.resize.bind(this)
         window.addEventListener("resize", this.resize)
 
+        this.width = window.innerWidth
+        this.height = window.innerHeight
+        this.pixelRatio = Math.min(window.devicePixelRatio, 2)
+
         this.resize()
     }
 
@@ -39,6 +44,7 @@ export default class Sizes extends EventEmitter {
 
         this.width = window.innerWidth
         this.height = window.innerHeight
+        this.pixelRatio = Math.min(window.devicePixelRatio, 2)
 
         this.trigger("resize")
     }

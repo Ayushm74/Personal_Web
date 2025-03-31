@@ -14,24 +14,27 @@ export default class Time extends EventEmitter {
         this.start = Date.now()
         this.current = this.start
         this.elapsed = 0
-        this.delta = 16
+        this.delta = 16 // Default to 60fps
         this.playing = true
 
         this.tick = this.tick.bind(this)
-        this.tick()
+        window.requestAnimationFrame(() => {
+            this.tick()
+        })
     }
 
     tick(): void {
-        this.ticker = window.requestAnimationFrame(this.tick)
-
-        const current = Date.now()
-
-        this.delta = current - this.current
-        this.elapsed += this.playing ? this.delta : 0
-        this.current = current
+        const currentTime = Date.now()
+        this.delta = currentTime - this.current
+        this.current = currentTime
+        this.elapsed = this.current - this.start
 
         if (this.delta > 60) this.delta = 60
         if (this.playing) this.trigger("tick")
+
+        window.requestAnimationFrame(() => {
+            this.tick()
+        })
     }
 
     // stop

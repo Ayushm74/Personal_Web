@@ -90,7 +90,7 @@ footer {
     margin: 5px;
     border-radius: 6px;
     background-color: transparent;
-    background-image: url(/imgs/Github-hover.png);
+    background-image: url(/imgs/github.png);
     background-position: 49% 50%;
     background-size: 35px 35px;
     background-repeat: no-repeat;
@@ -98,7 +98,24 @@ footer {
 }
 
 .github-button:hover {
-    background-color: #fe6637;
+    background-color: #333;
+}
+
+.leetcode-button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 6px;
+    background-color: transparent;
+    background-image: url(/imgs/leetcode.png);
+    background-position: 49% 50%;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    transition: all 300ms ease;
+}
+
+.leetcode-button:hover {
+    background-color: #FFA116;
 }
 
 footer span {
@@ -238,8 +255,53 @@ footer span {
     background-color: #171717ca;
 }
 
+.card:first-child {
+    position: relative;
+    background-color: #000000ca;
+}
+
+.card:first-child h3 {
+    color: #fff;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
+    font-size: 24px;
+}
+
+.card:first-child p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.card:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 234, 0.1));
+    pointer-events: none;
+}
+
+.card:first-child::after {
+    content: 'Chatbot';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 255, 234, 0.2);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-shadow: 0 0 5px #00ffea;
+}
+
 .card:hover {
     box-shadow: 0 10px 25px 2px rgba(88, 88, 88, 0.6), 0 1px 2px 0 #404040;
+    transform: translateY(-3px);
+}
+
+.card:first-child:hover {
+    box-shadow: 0 10px 25px 2px rgba(0, 255, 234, 0.2), 0 1px 2px 0 #00ffea;
     transform: translateY(-3px);
 }
 
@@ -337,4 +399,55 @@ button {
 .info > a {
     color: white;
     text-decoration: none;
+}
+
+.kite-learn {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e, #2a1b3d);
+}
+
+.kite-learn h3 {
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kite-learn p {
+    color: #a8a8b3;
+    font-size: 16px;
+}
+
+.kite-learn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1));
+    pointer-events: none;
+}
+
+.kite-learn::after {
+    content: 'Expert-Led';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(138, 43, 226, 0.2);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.kite-learn:hover {
+    box-shadow: 0 10px 25px 2px rgba(138, 43, 226, 0.2), 0 1px 2px 0 #8a2be2;
+    transform: translateY(-3px);
+}
+
+.kite-learn .description {
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0.8), rgba(42, 27, 61, 0.9));
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
 }

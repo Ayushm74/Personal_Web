@@ -10,8 +10,8 @@ import Assets from "./Assets"
 import World from "./World"
 import Navigation from "./Navigation"
 
-type OptionProps = {
-    targetElement: HTMLDivElement
+interface OptionProps {
+    targetElement?: HTMLDivElement
 }
 
 export type Config = {
@@ -24,8 +24,8 @@ export type Config = {
 }
 
 export default class Experience {
-    static instance: Experience
-    targetElement?: HTMLDivElement
+    private static instance: Experience
+    targetElement: HTMLDivElement | undefined
     time?: Time
     sizes?: Sizes
     camera: Camera
@@ -44,11 +44,8 @@ export default class Experience {
     constructor(_options?: OptionProps) {
         if (Experience.instance) {
             return Experience.instance
-        } else {
-            Experience.instance = this
         }
-
-        // Options
+        Experience.instance = this
         this.targetElement = _options?.targetElement
 
         if (!this.targetElement) {
@@ -73,6 +70,11 @@ export default class Experience {
         })
 
         this.update()
+    }
+
+    private init(): void {
+        // Add any initialization logic here
+        console.log('Experience initialized')
     }
 
     setConfig(): void {
